@@ -27,3 +27,7 @@ Initial repository baseline; service inventory and IPC contracts remain to be sp
 ## License
 
 Original project code targets MPL-2.0; dependency licenses must be audited.
+
+## Documentation
+
+See [docs/INDEX.md](docs/INDEX.md) for this repository's technical documentation. The [central repository documentation map](https://github.com/Waizusora/Wicofe-Docs/blob/main/REPOSITORY_DOCUMENTATION_MAP.md) identifies canonical ownership and cross-repository boundaries.
