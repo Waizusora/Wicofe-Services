@@ -1,6 +1,10 @@
 # Services Documentation Index
 
-This directory documents system-level userspace daemons and background services for Wicofe.
+This directory documents individual system-level userspace daemons and their operational contracts.
+
+## Architecture and design
+
+- [System services architecture 0.1](SYSTEM_SERVICES_ARCHITECTURE_0.1.md) — draft service taxonomy, ownership boundaries, lifecycle, IPC, privilege separation, configuration, recovery and validation.
 
 ## Scope
 - Daemon responsibilities, lifecycle, configuration, and IPC.
@@ -9,7 +13,7 @@ This directory documents system-level userspace daemons and background services 
 - Service-specific tests and operational diagnostics.
 
 ## Ownership
-[Osynit](https://github.com/Waizusora/Osynit) owns PID 1, service definitions, dependency ordering, supervision, and system shutdown. Wicofe-Services owns individual daemon implementations and their service-facing contracts. Kernel mechanisms remain in [Wicofe-Kernel](https://github.com/Waizusora/Wicofe-Kernel).
+[Osynit](https://github.com/Waizusora/Osynit) owns PID 1, service definitions, dependency ordering, supervision, restart policy and system shutdown. Wicofe-Services owns individual daemon implementations and their service-facing contracts. Kernel mechanisms remain in [Wicofe-Kernel](https://github.com/Waizusora/Wicofe-Kernel), with public syscall contracts owned by [Wicofe-ABI](https://github.com/Waizusora/Wicofe-ABI).
 
 ## Security
 Each service must document privileges, IPC access controls, secrets, input validation, failure/restart policy, and shutdown behavior. Prefer least privilege.
