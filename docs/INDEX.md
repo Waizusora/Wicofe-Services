@@ -5,8 +5,8 @@ This directory documents individual system-level userspace daemons and their ope
 ## Architecture and design
 
 - [System services architecture 0.1](SYSTEM_SERVICES_ARCHITECTURE_0.1.md) — draft service taxonomy, ownership boundaries, lifecycle, IPC, privilege separation, configuration, recovery and validation.
-- [OSynit external service integration 0.1](OSYNIT_SERVICE_INTEGRATION_0.1.md) — OSynit owns lifecycle; this repository owns daemon behavior.
-- [OSynit external service integration 0.1](OSYNIT_SERVICE_INTEGRATION_0.1.md) — OSynit owns lifecycle; this repository owns daemon domain behavior.
+- [Osynit external service integration 0.1](OSYNIT_SERVICE_INTEGRATION_0.1.md) — Osynit owns lifecycle; this repository owns daemon behavior.
+- [Osynit external service integration 0.1](OSYNIT_SERVICE_INTEGRATION_0.1.md) — Osynit owns lifecycle; this repository owns daemon domain behavior.
 
 ## Scope
 - Daemon responsibilities, lifecycle, configuration, and IPC.
