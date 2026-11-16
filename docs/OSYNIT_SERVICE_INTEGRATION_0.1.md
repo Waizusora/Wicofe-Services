@@ -1,12 +1,12 @@
-# OSynit External Service Integration 0.1
+# Osynit External Service Integration 0.1
 
 - **Status:** Proposed integration contract
-- **Owner:** Wicofe-Services for daemon implementations; OSynit for lifecycle
+- **Owner:** Wicofe-Services for daemon implementations; Osynit for lifecycle
 - **Date:** 2026-11-16
 
 ## 1. Responsibility split
 
-OSynit (Open System Initialize) owns system initialization, service definitions, dependency resolution, process supervision, service lifecycle, system state, failure recovery, and shutdown ordering.
+Osynit (Open System Initialize) owns system initialization, service definitions, dependency resolution, process supervision, service lifecycle, system state, failure recovery, and shutdown ordering.
 
 Wicofe-Services owns individual userspace daemon behavior, configuration, domain IPC, privilege requirements, health reporting, and service-specific tests. A daemon must not assume that it is PID 1 or independently replace the system service manager.
 
@@ -14,11 +14,11 @@ Wicofe-Services owns individual userspace daemon behavior, configuration, domain
 
 Examples include device policy/discovery, logging backends, user and session management, power policy, time synchronization, storage administration, and maintenance services. Network, audio, input, and graphics services may live in their narrower subsystem repositories.
 
-OSynit supervises these processes; it does not embed their domain logic into its mandatory core.
+Osynit supervises these processes; it does not embed their domain logic into its mandatory core.
 
 ## 3. Service process contract
 
-Initial OSynit service support is foreground-first:
+Initial Osynit service support is foreground-first:
 
 - `oneshot`: execute to completion and report success/failure.
 - `simple`: supervise a foreground main process.
@@ -38,17 +38,17 @@ A service unit should declare, as applicable:
 - optional readiness/health integration;
 - required platform capabilities.
 
-Unit schema is owned by OSynit. Wicofe-Services may propose service-specific metadata but must not fork the canonical unit format.
+Unit schema is owned by Osynit. Wicofe-Services may propose service-specific metadata but must not fork the canonical unit format.
 
 ## 5. Dependency and failure behavior
 
 The initial dependency relationship set is `Requires`, `Wants`, `Before`, `After`, `Conflicts`, and `OnFailure`. Service authors must document whether dependencies are boot-critical or best-effort.
 
-Restart behavior must be bounded and rate-limited. A daemon must not create its own unbounded restart loop in conflict with OSynit's supervisor policy.
+Restart behavior must be bounded and rate-limited. A daemon must not create its own unbounded restart loop in conflict with Osynit's supervisor policy.
 
 ## 6. Security and IPC
 
-Each daemon documents its privilege boundary, IPC endpoints, peer authentication, authorization, secrets handling, input validation, and filesystem access. Prefer least privilege and narrowly scoped IPC permissions. OSynit's manager socket is not a general-purpose daemon bus.
+Each daemon documents its privilege boundary, IPC endpoints, peer authentication, authorization, secrets handling, input validation, and filesystem access. Prefer least privilege and narrowly scoped IPC permissions. Osynit's manager socket is not a general-purpose daemon bus.
 
 ## 7. Validation
 
