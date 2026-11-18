@@ -5,8 +5,7 @@ This directory documents individual system-level userspace daemons and their ope
 ## Architecture and design
 
 - [System services architecture 0.1](SYSTEM_SERVICES_ARCHITECTURE_0.1.md) — draft service taxonomy, ownership boundaries, lifecycle, IPC, privilege separation, configuration, recovery and validation.
-- [Osynit external service integration 0.1](OSYNIT_SERVICE_INTEGRATION_0.1.md) — Osynit owns lifecycle; this repository owns daemon behavior.
-- [Osynit external service integration 0.1](OSYNIT_SERVICE_INTEGRATION_0.1.md) — Osynit owns lifecycle; this repository owns daemon domain behavior.
+- [Frenit external service integration 0.1](FRENIT_SERVICE_INTEGRATION_0.1.md) — Frenit owns init/service lifecycle policy; this repository owns daemon domain behavior.
 
 ## Scope
 - Daemon responsibilities, lifecycle, configuration, and IPC.
@@ -15,7 +14,7 @@ This directory documents individual system-level userspace daemons and their ope
 - Service-specific tests and operational diagnostics.
 
 ## Ownership
-[Osynit](https://github.com/Waizusora/Osynit) owns PID 1, service definitions, dependency ordering, supervision, restart policy and system shutdown. Wicofe-Services owns individual daemon implementations and their service-facing contracts. Kernel mechanisms remain in [Wicofe-Kernel](https://github.com/Waizusora/Wicofe-Kernel), with public syscall contracts owned by [Wicofe-ABI](https://github.com/Waizusora/Wicofe-ABI).
+[Frenit (Free Init)](https://github.com/Waizusora/Frenit) owns init-system and service lifecycle policy. Native PID 1 integration remains gated by the [Frenit integration contract](https://github.com/Waizusora/Wicofe-Specs/blob/main/boot/FRENIT_INTEGRATION_CONTRACT_0.1.md). Wicofe-Services owns individual daemon implementations and their service-facing contracts. Kernel mechanisms remain in [Wicofe-Kernel](https://github.com/Waizusora/Wicofe-Kernel), with public syscall contracts owned by [Wicofe-ABI](https://github.com/Waizusora/Wicofe-ABI).
 
 ## Security
 Each service must document privileges, IPC access controls, secrets, input validation, failure/restart policy, and shutdown behavior. Prefer least privilege.
