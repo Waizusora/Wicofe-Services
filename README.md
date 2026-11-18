@@ -14,7 +14,7 @@ Potential service families include:
 
 ## Boundaries
 
-Osynit owns PID 1, service definitions, dependency ordering, supervision, and shutdown. Individual daemon implementations belong here or in a narrower subsystem repository. Kernel drivers and device primitives remain in Wicofe-Kernel.
+[Frenit (Free Init)](https://github.com/Waizusora/Frenit) owns init-system and service lifecycle policy, including service definitions, dependency ordering, supervision and shutdown. Native PID 1 integration remains unverified. Individual daemon implementations belong here or in a narrower subsystem repository. Kernel drivers and device primitives remain in Wicofe-Kernel.
 
 ## Design principles
 
