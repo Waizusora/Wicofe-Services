@@ -14,10 +14,10 @@ This directory documents individual system-level userspace daemons and their ope
 - Service-specific tests and operational diagnostics.
 
 ## Ownership
-[Frenit (Free Init)](https://github.com/Waizusora/Frenit) owns init-system and service lifecycle policy. Native PID 1 integration remains gated by the [Frenit integration contract](https://github.com/Waizusora/Wicofe-Specs/blob/main/boot/FRENIT_INTEGRATION_CONTRACT_0.1.md). Wicofe-Services owns individual daemon implementations and their service-facing contracts. Kernel mechanisms remain in [Wicofe-Kernel](https://github.com/Waizusora/Wicofe-Kernel), with public syscall contracts owned by [Wicofe-ABI](https://github.com/Waizusora/Wicofe-ABI).
+[Frenit (Free Init)](https://github.com/Waizusora/Frenit) owns init-system and service lifecycle policy. Native PID 1 integration remains gated by the [Frenit integration contract](https://github.com/Waizusora/Wicofe-Spec/blob/main/boot/FRENIT_INTEGRATION_CONTRACT_0.1.md). Wicofe-Service owns individual daemon implementations and their service-facing contracts. Kernel mechanisms remain in [Wicofe-Kernel](https://github.com/Waizusora/Wicofe-Kernel), with public syscall contracts owned by [Wicofe-ABI](https://github.com/Waizusora/Wicofe-ABI).
 
 ## Security
 Each service must document privileges, IPC access controls, secrets, input validation, failure/restart policy, and shutdown behavior. Prefer least privilege.
 
-- [Central documentation index](https://github.com/Waizusora/Wicofe-Docs/blob/main/INDEX.md)
-- [Repository documentation map](https://github.com/Waizusora/Wicofe-Docs/blob/main/REPOSITORY_DOCUMENTATION_MAP.md)
+- [Central documentation index](https://github.com/Waizusora/Wicofe-Doc/blob/main/INDEX.md)
+- [Repository documentation map](https://github.com/Waizusora/Wicofe-Doc/blob/main/REPOSITORY_DOCUMENTATION_MAP.md)
