@@ -1,15 +1,15 @@
 # Frenit External Service Integration 0.1
 
 - **Status:** Proposed integration guidance; native service supervision is not verified.
-- **Owner:** Wicofe-Services for daemon implementations; Frenit for init/service lifecycle policy.
+- **Owner:** Wicofe-Service for daemon implementations; Frenit for init/service lifecycle policy.
 - **Date:** 2026-11-18
-- **Cross-component contract:** [WIC-SPEC-BOOT-FRENIT-001](https://github.com/Waizusora/Wicofe-Specs/blob/main/boot/FRENIT_INTEGRATION_CONTRACT_0.1.md).
+- **Cross-component contract:** [WIC-SPEC-BOOT-FRENIT-001](https://github.com/Waizusora/Wicofe-Spec/blob/main/boot/FRENIT_INTEGRATION_CONTRACT_0.1.md).
 
 ## 1. Responsibility split
 
 [Frenit (Free Init)](https://github.com/Waizusora/Frenit) is the canonical Wicofe init-system and service-management project. Frenit owns service definitions, dependency policy, process supervision, lifecycle transitions, restart policy, operating targets and shutdown orchestration.
 
-Wicofe-Services owns individual userspace daemon behavior, configuration, domain IPC, privilege requirements, health reporting and service-specific tests. A daemon must not assume that it is PID 1 or independently replace the system service manager.
+Wicofe-Service owns individual userspace daemon behavior, configuration, domain IPC, privilege requirements, health reporting and service-specific tests. A daemon must not assume that it is PID 1 or independently replace the system service manager.
 
 ## 2. External service domains
 
@@ -25,7 +25,7 @@ Before native supervision is enabled, Wicofe-Kernel and Wicofe-ABI must provide 
 
 ## 4. Service metadata ownership
 
-Frenit is the sole owner of its service-unit schema and dependency model. Wicofe-Services may document daemon-specific requirements and propose metadata, but must not create a competing unit format or hardcode Frenit-private implementation details.
+Frenit is the sole owner of its service-unit schema and dependency model. Wicofe-Service may document daemon-specific requirements and propose metadata, but must not create a competing unit format or hardcode Frenit-private implementation details.
 
 Any service metadata must eventually identify, as applicable, executable and argument vector, environment policy, working directory, identity/privileges, timeout, restart behavior, dependency edges, readiness requirements and required platform capabilities. The exact schema must be taken from Frenit's canonical specification when published.
 
